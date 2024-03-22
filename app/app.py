@@ -12,6 +12,7 @@ import streamlit as st
 from pathlib import Path
 import tempfile
 import json
+from simulation import *
 
 
 # Import local modules for handling inputs and web visualization
@@ -47,7 +48,13 @@ def main():
             tab1, tab2, = st.tabs(["Simulation Settings", "Results"])
             with tab1:
                 st.header("Simulation")
-            
+                #simulation_control = create_simulation_control()
+                #simulation_output = create_simulation_output()
+                simulation_parameter = create_simulation_parameter()
+                #simulation_run_period = create_run_period()
+                #simulation_shadow_calc = create_shadow_calculation()
+                #simulation_sizing_param = create_sizing_parameter()                
+                run_simulation(simulation_parameter)
             with tab2:
                 st.header("Results")
             
